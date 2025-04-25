@@ -25,11 +25,11 @@ This comprehensive 6-month program will transform you from a coding beginner to 
 - **Web Development** - HTML, CSS, JavaScript fundamentals
 - **Backend Integration** - Connecting your chatbot to websites
 - **Deployment** - Publishing your work using GitHub and hosting services
-
+<!-- 
 <div align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTZmNDMyYjc5N2E2MjZhZTliZTNiY2E1NjZiMDJkMTEzODIwOTAzNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3oKIPnAiaMCws8nOsE/giphy.gif" width="450px">
 </div>
-
+-->
 ---
 
 # 📅 Month-by-Month Roadmap
@@ -64,11 +64,11 @@ This comprehensive 6-month program will transform you from a coding beginner to 
 **Projects:** Text-based chatbot with basic response logic
 
 **Assessment:** 🏆 **MODULE 1 TEST** + Coding projects review
-
+<!--
 <div align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTB1ZHU5dzdmZDBvNnc2Z3cyd292NnQyYnRqbDUzcWJnZTc5cWhraCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/scZPhLqaVOM1qG4lT9/giphy.gif" width="400px">
 </div>
-
+-->
 ---
 
 ## 🔷 MODULE 2: Chatbot + Web Integration
@@ -97,11 +97,11 @@ This comprehensive 6-month program will transform you from a coding beginner to 
 **Projects:** Fully functional chatbot with Python backend and HTML/CSS/JS frontend
 
 **Assessment:** 🏆 **MODULE 2 TEST** + Live demo
-
+<!--
 <div align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjZkMzJkYnJ5NW5pZXdrMXFvcDFvdTd4MzBzZ2g5YTllbm8zdDhoaCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/L1R1tvI9svkIWwpVYr/giphy.gif" width="450px">
 </div>
-
+-->
 ---
 
 ## 🔷 MODULE 3: Real Projects + GitHub + Deployment
@@ -130,11 +130,11 @@ This comprehensive 6-month program will transform you from a coding beginner to 
 **Projects:** Complete deployed chatbot solution with documentation
 
 **Assessment:** 🏆 **FINAL Project** + Project showcase
-
+<!--
 <div align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmpybGpiMHN2OHE1Z3d3NThpNHV0NWYyZnNmeGI5czR2YWtkeHhvZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3o7qE1YN7aBOFPRw8E/giphy.gif" width="400px">
 </div>
-
+-->
 ---
 
 # 🛡️ Rules for Success
