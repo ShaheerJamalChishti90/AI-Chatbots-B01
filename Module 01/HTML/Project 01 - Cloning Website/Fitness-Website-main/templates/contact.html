@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+        <h1>CONTACT US - SJC FITNESS CLUB</h1>
+        <h6>Have questions or ready to start your fitness journey?</h6 >
+        <h6>Reach out to us — we’re here to help!</h6>
+        <div class="buttons">
+            <a href="{{url_for('services')}}" class="btn-outline">Our Services</a>
+            <a href="{{url_for('home')}}" class="btn-outline">Home</a>
+            <a href="{{url_for('about')}}" class="btn-outline">About Us</a>
+        </div>
+        </div>
+    </section>
+
+      <!-- Membership -->
+  <section id="membership" class="section bg-dark">
+    <div class="container">
+      <h2>Membership Plans</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Basic</h3>
+          <p>Access to gym equipment</p>
+          <p>PKR 2,000/month</p>
+        </div>
+        <div class="card">
+          <h3>Standard</h3>
+          <p>Includes group classes</p>
+          <p>PKR 3,500/month</p>
+        </div>
+        <div class="card">
+          <h3>Premium</h3>
+          <p>All access + personal trainer</p>
+          <p>PKR 6,000/month</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Call to Action -->
+  <section id="join" class="cta">
+    <h2>Ready to Change Your Life?</h2>
+    <a href="{{url_for('form')}}"><h5 style="color: white;" class="btn1-outline">Click Me!</h5></a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section bg-dark">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>📍 123 Fitness Street, Karachi, Pakistan</p>
+      <p>📞 +92-300-1234567</p>
+      <p>✉️ contact@sjcclub.com</p>
+    </div>
+  </section>
+</body>
+</html>

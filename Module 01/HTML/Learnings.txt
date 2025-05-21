@@ -1,0 +1,37 @@
+25/4/25
+    Chapter 02: 
+        basic structure
+            headings
+            para
+            br tag(break) 
+            image tag
+            bold italic underline tags
+            attributes
+            anchor tag
+            big and small tags
+            sub and super scripts
+            pre(preformated) tag
+        (practice set done!)
+
+25/4/25
+    Chapter 03:
+        header
+            nav
+        main
+            section
+            article
+            div
+            span
+        footer
+
+27/4/25
+    Chapter 04
+      Lists
+            
+
+
+
+
+        
+
+

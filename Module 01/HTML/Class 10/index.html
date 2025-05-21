@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 04</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+      
+        table th, table td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+          border: 2px solid black;
+        }
+      
+        table th {
+          background-color: #f2f2f2;
+        }
+      
+        table tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+      
+        table tr:hover {
+          background-color: #f1f1f1;
+        }
+      </style>
+      
+
+</head>
+<body>
+    <h2>Tables in HTML</h2>
+    <table>
+        <thead>
+            <caption><b style="color: blueviolet;">Shaheer Jamal Chishti</b></caption>
+            <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Shaheer</td>
+                <td>Jamal</td>
+                <td>Chishti</td>   
+            </tr>
+            <tr>
+                <td>Muhammad</td>
+                <td>Saad</td>
+                <td>Iftikhar</td>
+            </tr>
+            <tr>
+                <td colspan="">Thanks!</td> 
+                <td colspan="2">You re welcome</td> 
+            </tr>
+
+            <tr>
+              <td>Pakistan</td>
+              <td colspan="3">Total Marks: 500</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

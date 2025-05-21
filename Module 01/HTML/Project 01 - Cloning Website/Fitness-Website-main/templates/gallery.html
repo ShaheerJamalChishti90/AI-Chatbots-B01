@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Gallery</title>
+</head>
+<body>
+
+        <section class="hero">
+        <div class="hero-content">
+        <h1>GALLERY - SJC FITNESS CLUB</h1>
+        <h6>Take a look inside SJC Fitness Club</h6 >
+        <div class="buttons">
+            <a href="{{url_for('services')}}" class="btn-outline">View Services</a>
+            <a href="{{url_for('home')}}" class="btn-outline">Home</a>
+            <a href="{{url_for('contact')}}" class="btn-outline">Contact Us</a>
+        </div>
+        </div>
+    </section>
+
+      <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Gallery</h2>
+      <p>(Insert gym images here)</p>
+    </div>
+  </section>
+</body>
+</html>

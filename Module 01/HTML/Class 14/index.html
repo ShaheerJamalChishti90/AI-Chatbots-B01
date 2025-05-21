@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 14</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        /* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #1e293b;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0f172a;
+    border-radius: 8px;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* About Section */
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-us h1 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Courses Section */
+.courses h1 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.courses h4 {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.courses ul {
+    list-style-type: none;
+}
+
+.courses ul li {
+    background-color: #e2e8f0;
+    margin: 10px auto;
+    padding: 12px 20px;
+    max-width: 400px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.courses ul li:hover {
+    transform: scale(1.03);
+    background-color: #cbd5e1;
+}
+
+/* Contact Section */
+footer {
+    background-color: #1e293b;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+footer .contact h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+footer .contact h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+footer pre {
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    color: #cbd5e1;
+}
+
+footer span {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .courses ul li {
+        width: 90%;
+    }
+
+    .about-us h1,
+    .courses h1 {
+        font-size: 2rem;
+    }
+}
+
+     </style>
+</head>
+<body>
+    <header>
+        <div class="tabs">
+            <nav>
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#contact">Contact</>
+            </nav>
+        </div>
+
+    </header>
+
+    <!-- About us section -->
+    <section id="about">
+        <div class="about-us">
+            <h1>AL-QURAN ACADEMY</h1>
+            <p>At Al Quran Academy, our mission is to provide high-quality Quranic and Islamic education to learners of all ages and backgrounds. Founded on the principles of sincerity, knowledge, and service, we aim to make Quran learning accessible, engaging, and spiritually enriching for everyone.</p>
+        </div>
+    </section>
+
+    <!-- Courses ka section -->
+    <section id="courses">
+        <div class="courses">
+            <h1>COURSES WE ARE OFFERING</h1>
+            <h4>We offer a range of programs including</h4>
+            <ul>
+                <li>Quran Reading with Tajweed</li>
+                <li>Memorization (Hifz)</li>
+                <li>IT Courses</li>
+                <li>Nazra</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- Contact and stuff -->
+    <footer id="contact">
+        <div class="contact">
+            <h4>CONTACT US</h4>
+            <h5>Al-Quran Academy</h5>
+            <pre>
+                Email: info@alquran.com
+                Phone: +92 300 - XXXXXXX
+            </pre>
+        </div>
+        <span>AL QURAN ACADEMY &copy; </span>
+    </footer>
+</body>
+</html>

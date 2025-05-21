@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <form action="">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Enter your name here"  required>
+
+        <select name="gender" id="gender" required>
+            <option value="-" selected disabled>Please Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="non">Non</option>
+        </select>
+
+        <br>
+        <label for="comments">Your Feedback Below</label>
+        <br>
+        <textarea name="feedback" id="comments" cols="30" rows="10"></textarea>
+
+        <br>
+        <label for="agreement">Policy Agreement</label>
+        <input type="checkbox" name="Policy" id="agreement">
+
+        <br>
+
+
+        <input type="submit" value="submit">
+
+    </form>
+</body>
+</html>

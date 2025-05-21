@@ -1,0 +1,14 @@
+.main-div {
+  background: url('') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button a {
+  margin: 1rem;
+  padding: 5px 5px;
+  border-radius: 5px;
+}
