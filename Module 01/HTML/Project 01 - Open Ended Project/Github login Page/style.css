@@ -1,0 +1,101 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: #f6f8fa;
+    color: #24292f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
+/* Logo and Heading */
+.logo-and-text {
+    margin-bottom: 24px;
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+}
+
+.signin-text h1 {
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 16px;
+}
+
+/* Credentials form */
+.credentails {
+    background-color: white;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 24px;
+    width: 360px;
+    box-shadow: 0 1px 0 rgba(27,31,35,0.04);
+}
+
+.email-password label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.email-password input[type="text"],
+.email-password input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    background-color: #f6f8fa;
+}
+
+.email-password input[type="text"]:focus,
+.email-password input[type="password"]:focus {
+    border-color: #0969da;
+    outline: none;
+    background-color: white;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #2da44e;
+    color: white;
+    font-weight: 600;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #218639;
+}
+
+/* Create account link */
+.create-account {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.create-account a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
