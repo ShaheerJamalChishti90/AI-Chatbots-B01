@@ -2,24 +2,25 @@ body {
     background-color: darkgray;
 }
 
-
 /* ID ko hastag laga kqar access kareingy */
 #box-01 {
-    background-color: aqua;
+    background-color: white;
     text-align: center;
-    text-decoration:  wavy underline ;
+    text-decoration:double underline purple;
     font-size: 20px;
     font-weight: bold;
     border: 10px solid red;
     /* font-family: 'Courier New', Courier, monospace; */
 }
 
-#box-01 h1 {
+#box-01 .boxh1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: 5px solid black;
+    text-decoration: line-through red;
 }
 #box-01 p {
     font-family: 'Courier New', Courier, monospace;
+    border: 5px solid green;
 }
 
 /* Class ko dot laga kar access kareingy */
