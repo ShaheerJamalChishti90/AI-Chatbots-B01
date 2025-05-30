@@ -1,0 +1,25 @@
+Biolerplate Template
+Headings
+Paragraph
+Text Formating (B, I, U)
+attributes
+anchor tag
+big and small tags
+sub and super scripts
+pre(preformated) tag
+image linking
+header
+nav
+main
+section
+article
+div
+span
+footer
+lists / Types of lists - UL Ol DL
+Tables -> th td tr colspan
+Forms 
+Video 
+
+
+
