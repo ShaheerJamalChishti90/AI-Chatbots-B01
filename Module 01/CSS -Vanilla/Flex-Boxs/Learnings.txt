@@ -1,0 +1,50 @@
+How to center a div
+    1. Working on Main Axis (x-axis)
+        1. justify-content
+            flex start 
+            flex end
+            center 
+            -----
+            space between
+            space around
+            space evenly
+    2. Working on Cross Axis (y-axis)
+        1. align-items
+
+Flex Direction
+    row
+    row reverse
+    column
+
+Gap Property
+    gap ==> makes less use of margin
+    row gap 
+    column gap 
+    flex wrap 
+    flex nowrap 
+
+align content
+    space around (default value) ==> to center everything on the page
+
+flex shrink: 0; ==> This can only be apply on flex items and not on flex container
+(It basically prevents the shrinking of the object, 1 is the default value)
+
+similarly you can use the flex grow property
+flex grow: 1;
+(you can also give the max width into px to tell the css that stop the growing of boxes when it reaches to that particular value)
+
+for the flex shrink you can give the min width so it will only shrink the boxes to that particular min width
+
+we can combine the flex shrink and flex wrap property using the media query
+
+@media(max-width: 500px){
+    body{
+        flex-wrap: wrap;
+    }
+}
+
+AlignSelf
+.box1{
+    align-self: flex-start/end
+    margin-right: auto
+}

@@ -1,0 +1,42 @@
+button:hover {
+    background-color: rgb(19, 30, 249);
+}
+
+button:active {
+    background-color: rgb(255, 85, 0);
+    transform: scale(0.95);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 35px;
+    color: white;
+    background-color: rgb(46, 46, 52);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* li:nth-child(odd) {
+    background-color: rgb(46, 46, 52);
+}
+
+li:nth-child(even) {
+    background-color: rgb(120, 120, 121);
+} */
+
+/* li {
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(46, 46, 52);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    margin-bottom: 5px;
+} */
+
+li:nth-child(2n) {
+    background-color: rgb(46, 46, 52);
+}

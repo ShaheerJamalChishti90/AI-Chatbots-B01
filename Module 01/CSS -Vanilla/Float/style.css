@@ -1,0 +1,11 @@
+#box {
+    width: 100px;
+    height: 100px;
+    border: solid 2px black;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 100px;
+    margin: 10px;
+    background-color: lightblue;
+    float: left;
+}

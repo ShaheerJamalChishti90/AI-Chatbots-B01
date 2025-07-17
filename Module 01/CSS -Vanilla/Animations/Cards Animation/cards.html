@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Card Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="cards.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card-container">
+            <div class="card active" data-card="1">
+                <div class="card-indicator">1 / 30</div>
+                <div class="card-content">
+                    <div class="card-icon">★</div>
+                    <div class="card-number">01</div>
+                    <div class="card-title">Innovation</div>
+                    <div class="card-description">Cutting-edge solutions for tomorrow's challenges</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn" id="prevBtn" disabled>Previous</button>
+            <div class="counter">
+                <span id="currentCard">1</span> / 30
+            </div>
+            <button class="btn" id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const cardData = [
+            { icon: '★', title: 'Innovation', description: 'Cutting-edge solutions for tomorrow\'s challenges' },
+            { icon: '⚡', title: 'Speed', description: 'Lightning fast performance and execution' },
+            { icon: '🎨', title: 'Design', description: 'Beautiful and functional user experiences' },
+            { icon: '🚀', title: 'Launch', description: 'Ready to take off and reach new heights' },
+            { icon: '💎', title: 'Quality', description: 'Premium excellence in every detail' },
+            { icon: '🌟', title: 'Excellence', description: 'Outstanding results that exceed expectations' },
+            { icon: '🔥', title: 'Passion', description: 'Burning desire to succeed and innovate' },
+            { icon: '🌈', title: 'Vision', description: 'Colorful future ahead with endless possibilities' },
+            { icon: '⭐', title: 'Success', description: 'Reaching for the stars and achieving goals' },
+            { icon: '🎯', title: 'Focus', description: 'Precision and accuracy in every action' },
+            { icon: '🌊', title: 'Flow', description: 'Smooth and seamless user experience' },
+            { icon: '🏆', title: 'Victory', description: 'Winning every challenge with determination' },
+            { icon: '🎪', title: 'Magic', description: 'Extraordinary experiences that amaze' },
+            { icon: '🔮', title: 'Future', description: 'Glimpse into tomorrow\'s possibilities' },
+            { icon: '🌙', title: 'Dreams', description: 'Reaching beyond limits and boundaries' },
+            { icon: '☀️', title: 'Energy', description: 'Radiant and powerful force of nature' },
+            { icon: '🎭', title: 'Drama', description: 'Captivating stories that engage deeply' },
+            { icon: '🎵', title: 'Harmony', description: 'Perfect balance in all aspects of life' },
+            { icon: '🌺', title: 'Beauty', description: 'Natural elegance and graceful design' },
+            { icon: '🌱', title: 'Growth', description: 'Continuous evolution and improvement' },
+            { icon: '🎨', title: 'Art', description: 'Creative expression that inspires others' },
+            { icon: '🔧', title: 'Build', description: 'Constructing the future with strong foundations' },
+            { icon: '🌍', title: 'Global', description: 'Worldwide impact and meaningful connections' },
+            { icon: '🎉', title: 'Celebrate', description: 'Moments of joy and shared happiness' },
+            { icon: '🔊', title: 'Voice', description: 'Making yourself heard in a crowded world' },
+            { icon: '🚁', title: 'Elevate', description: 'Rising above challenges and limitations' },
+            { icon: '🏃', title: 'Action', description: 'Moving forward fast with purpose' },
+            { icon: '🎪', title: 'Wonder', description: 'Amazing possibilities waiting to be discovered' },
+            { icon: '🌟', title: 'Shine', description: 'Bright and brilliant in everything you do' },
+            { icon: '🎊', title: 'Complete', description: 'Perfect finish to an amazing journey' }
+        ];
+
+        let currentCardIndex = 0;
+        const totalCards = cardData.length;
+        
+        const cardContainer = document.querySelector('.card-container');
+        const currentCardSpan = document.getElementById('currentCard');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateCard(index) {
+            const data = cardData[index];
+            const cardNumber = (index + 1).toString().padStart(2, '0');
+            
+            const cardHTML = `
+                <div class="card-indicator">${index + 1} / ${totalCards}</div>
+                <div class="card-content">
+                    <div class="card-icon">${data.icon}</div>
+                    <div class="card-number">${cardNumber}</div>
+                    <div class="card-title">${data.title}</div>
+                    <div class="card-description">${data.description}</div>
+                </div>
+            `;
+            
+            return cardHTML;
+        }
+
+        function showCard(newIndex, direction = 'next') {
+            if (newIndex < 0 || newIndex >= totalCards) return;
+            
+            const currentCard = document.querySelector('.card');
+            const newCard = document.createElement('div');
+            newCard.className = 'card';
+            newCard.innerHTML = updateCard(newIndex);
+            
+            if (direction === 'next') {
+                newCard.classList.add('next');
+                cardContainer.appendChild(newCard);
+                
+                setTimeout(() => {
+                    currentCard.classList.add('exiting');
+                    newCard.classList.remove('next');
+                    newCard.classList.add('entering', 'active');
+                }, 50);
+            } else {
+                newCard.classList.add('prev');
+                cardContainer.appendChild(newCard);
+                
+                setTimeout(() => {
+                    currentCard.classList.add('exiting');
+                    newCard.classList.remove('prev');
+                    newCard.classList.add('entering', 'active');
+                }, 50);
+            }
+            
+            setTimeout(() => {
+                currentCard.remove();
+                newCard.classList.remove('entering');
+            }, 600);
+            
+            currentCardIndex = newIndex;
+            currentCardSpan.textContent = currentCardIndex + 1;
+            
+            // Update button states
+            prevBtn.disabled = currentCardIndex === 0;
+            nextBtn.disabled = currentCardIndex === totalCards - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentCardIndex < totalCards - 1) {
+                showCard(currentCardIndex + 1, 'next');
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentCardIndex > 0) {
+                showCard(currentCardIndex - 1, 'prev');
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentCardIndex < totalCards - 1) {
+                showCard(currentCardIndex + 1, 'next');
+            } else if (e.key === 'ArrowLeft' && currentCardIndex > 0) {
+                showCard(currentCardIndex - 1, 'prev');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* Body Setup */
+body {
+  margin: 0;
+  background-color: #161616;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* logo setup */
+.logo-container {
+  position: absolute;
+  top: -5;
+  left: 20px;
+  z-index: 2;
+}
+
+.logo {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  padding: 12px 25px; 
+  border-radius: 10px;
+  z-index: 1;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+/* Glow background behind logo */
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  border-radius: 10px;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* Glowing rainbow effect */
+.logo::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  background-size: 600%;
+  z-index: -2;
+  filter: blur(8px);
+  opacity: 0;
+  border-radius: 12px;
+  transition: opacity 0.3s ease-in-out;
+  animation: glowing 20s linear infinite;
+}
+
+/* Hover glow */
+.logo:hover::before {
+  opacity: 1;
+}
+
+/* Click effect */
+.logo:active {
+  color: #000;
+  font-weight: bold;
+}
+
+.logo:active::after {
+  background: transparent;
+}
+
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #1e1e1e;
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual Nav Links */
+.nav-link {
+  position: relative;
+  margin: 0 20px;
+  margin-right: 5px;
+  padding: 12px 25px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+/* Glow background behind nav item */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  border-radius: 10px;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* Glowing rainbow effect */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  background-size: 600%;
+  z-index: -2;
+  filter: blur(8px);
+  opacity: 0;
+  border-radius: 12px;
+  transition: opacity 0.3s ease-in-out;
+  animation: glowing 20s linear infinite;
+}
+
+/* Hover Effect - Show the glow */
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+/* Click Effect */
+.nav-link:active {
+  color: #000;
+  font-weight: bold;
+}
+
+.nav-link:active::after {
+  background: transparent;
+}
+
+/* Glow Animation Keyframes */
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}

@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    width: 200px;
+    height: 50px;
+    background-color: #c4a226;
+    color: rgb(0, 0, 0);
+    border: 5px solid #321c5f;
+    font: bold 20px Arial, sans-serif;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px darkgray;
+    transition: all 0.15s ease-in 0s;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #321c5f;
+    transform: scale(1.05);
+}   
