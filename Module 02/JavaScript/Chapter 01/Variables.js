@@ -7,6 +7,8 @@
 
 
 let a = "";
+const b = {}; 
+
 
 // let 1223 = 
 // let 12a =
