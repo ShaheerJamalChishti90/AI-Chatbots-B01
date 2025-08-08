@@ -12,25 +12,29 @@
 // }
 
 
-let x = 10; 
+// let x = 10; 
 
-if (x > 5) {
-        console.log("x is greater than 5")
-    } 
-else {
-        console.log("x is less than 5")
-    }
+// if (x > 5) {
+//         console.log("x is greater than 5")
+//     } 
+// else {
+//         console.log("x is less than 5")
+//     }
         
  
-// let x = 2;
+let x = 2;
 
-// if (x > 10) {
-//     console.log(`${x}, is greater than 10`)
-// } else if (x < 10 && x > 5) {
-//     console.log(`${x} is less than 10 but greater than 5`)
-// } else {
-//     console.log(`${x} is less than 5`)
-// }
+if (x > 10) {
+    console.log(`${x}, is greater than 10`)
+}
+
+else if (x < 10 && x > 5) {
+    console.log(`${x} is less than 10 but greater than 5`)
+} 
+
+else {
+    console.log(`${x} is less than 5`)
+}
 
 
 
