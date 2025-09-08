@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<body>
+    <div class="first-div">
+        <h1 class="heading">AL-QURAN ACADEMY</h1>
+        <p class="my_class">This is my first message</p>
+        <p class="my_class">This is my second message</p>
+        <button id="btn">CLICK ME</button>
+    </div>
+
+    <script>
+        // let message = document.querySelector(".first-message")
+        // let second_message = document.querySelector(".second-message")
+        let all_class = document.querySelectorAll(".my_class")
+        let my_button = document.getElementById("btn")
+        let myheading = document.querySelector(".heading")
+
+
+        // myheading.innerHTML = "MY ACADEMY NAME IS AL-QURAN ACADEMY"
+        // message.style.color = "green"
+        // second_message.style.fontSize = "30px"
+        
+
+        // event action/listener
+        my_button.onclick = function() {
+
+            all_class.forEach(i => {
+                i.style.fontSize = "35px";
+            });
+
+            myheading.style.color = "green"
+
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+<!-- 1. Query Selector -->
+<!-- 2. Query Selector All -->
+<!-- 3. Get Element By ID -->
