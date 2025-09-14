@@ -6,27 +6,39 @@
     <title>Query Selector</title>
 </head>
 <body>
-    <div class="first-div">
-        <h1 class="heading">AL-QURAN ACADEMY</h1>
-        <p class="my_class">This is my first message</p>
-        <p class="my_class">This is my second message</p>
-        <button id="btn">CLICK ME</button>
+    <div id="div-id">
+        <h1 class="h1-class">AL QURAN ACADEMY</h1>
+        <p class="p1-01">The academy is located in Federal B Area</p>
+        <p class="p1">The academy is adminstered by Faizan Qadri Ziai</p>
+        <p class="p1">The academy is offering multiple IT courses</p>
     </div>
 
     <script>
-        // let message = document.querySelector(".first-message")
-        // let second_message = document.querySelector(".second-message")
-        let all_class = document.querySelectorAll(".my_class")
-        let my_button = document.getElementById("btn")
-        let myheading = document.querySelector(".heading")
-
-
-        // myheading.innerHTML = "MY ACADEMY NAME IS AL-QURAN ACADEMY"
-        // message.style.color = "green"
-        // second_message.style.fontSize = "30px"
+        let heading1 = document.querySelector(".h1-class")
+        let paragraphs = document.querySelectorAll(".p1")
+        let paragraph01 = document.querySelector(".p1-01")
         
+        heading1.style.fontSize = "100px"
+        heading1.style.color = "green"
+        paragraph01.innerHTML = "Al Quran Academy is located in FB Area"
 
-        // event action/listener
+
+        paragraph01.style.color = "red";
+
+        function myheading() {
+            paragraphs.forEach( i => {
+                i.style.color = "red";
+            });
+        }
+
+        myheading()
+
+    </script>
+
+
+
+    <!-- <script>
+    // event action/listener
         my_button.onclick = function() {
 
             all_class.forEach(i => {
@@ -37,7 +49,7 @@
 
         };
 
-    </script>
+    </script> -->
 </body>
 </html>
 
@@ -45,4 +57,6 @@
 
 <!-- 1. Query Selector -->
 <!-- 2. Query Selector All -->
-<!-- 3. Get Element By ID -->
+<!-- 3. Get Elehement By ID -->
+
+

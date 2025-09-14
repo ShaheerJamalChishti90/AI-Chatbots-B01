@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Voting System</h1>
+    
+    <!-- User Form -->
+    <form id="voter-form">
+      <label for="username">Enter your name:</label>
+      <input type="text" id="username" name="username" placeholder="Your name" required>
+
+      <label for="age">Enter your age:</label>
+      <input type="number" id="age" name="age" placeholder="Your age" required>
+
+      <button type="submit">Check Eligibility</button>
+    </form>
+
+    <!-- Message Section -->
+    <div id="message"></div>
+
+    <!-- Candidate List -->
+    <div id="candidates" class="hidden">
+      <h2>Select Your Candidate</h2>
+      <ul>
+        <li><button data-id="1">1: ABC Party</button></li>
+        <li><button data-id="2">2: PQR Party</button></li>
+        <li><button data-id="3">3: LMN Party</button></li>
+        <li><button data-id="4">4: Congress</button></li>
+        <li><button data-id="5">5: Muslim League</button></li>
+      </ul>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result"></div>
+  </div>
+
+  <!-- Your JavaScript will attach here -->
+  <script src="vs.js"></script>
+</body>
+</html>
