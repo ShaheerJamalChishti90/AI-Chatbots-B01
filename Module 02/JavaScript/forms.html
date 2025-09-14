@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Save Form Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h3>User Form</h3>
+    <form id="userForm">
+      <input type="text" id="name" placeholder="Enter your name" required>
+      <input type="number" id="age" placeholder="Enter your age" required>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <button type="submit">Save to File</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("userForm");
+
+    form.addEventListener("submit", event)
+
+    function event(event) {
+    //   event.preventDefault(); 
+
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
+      let email = document.getElementById("email").value;
+
+      let content = `Name: ${name}\nAge: ${age}\nEmail: ${email}`;
+
+      let blob = new Blob([content], { type: "text/plain" });
+
+      let link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `${name}.txt`; // file name
+      link.click(); 
+    };
+  </script>
+
+</body>
+</html>
