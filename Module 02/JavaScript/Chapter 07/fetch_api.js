@@ -20,9 +20,9 @@
 
 
 
-fetch("https://jsonplaceholder.typicode.com/users")
-    .then(my_response => my_response.json())
-    .then(user => {
-            console.log(`First User Name: ${user[0].name}\nFirst User Email: ${user[0].email}`)
-        })
-    .catch(error => console.error("Ye error aagaya!: ", error))
+// fetch("https://jsonplaceholder.typicode.com/users")
+//     .then(my_response => my_response.json())
+//     .then(user => {
+//             console.log(`First User Name: ${user[0].name}\nFirst User Email: ${user[0].email}`)
+//         })
+//     .catch(error => console.error("Ye error aagaya!: ", error))
