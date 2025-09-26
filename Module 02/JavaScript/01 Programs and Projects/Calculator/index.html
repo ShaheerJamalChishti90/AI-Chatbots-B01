@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #2c2c2c;
+      font-family: Arial, sans-serif;
+    }
+
+    .calculator {
+      width: 320px;
+      background: #111;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+    }
+
+    .display {
+      background: #222;
+      color: #fff;
+      font-size: 2rem;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: right;
+      margin-bottom: 15px;
+      overflow-x: auto;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    .operator {
+      background: #f57c00;
+    }
+
+    .operator:hover {
+      background: #ff9800;
+    }
+
+    .equal {
+      background: #00796b;
+      grid-column: span 2;
+    }
+
+    .equal:hover {
+      background: #009688;
+    }
+
+    .clear {
+      background: #c62828;
+    }
+
+    .clear:hover {
+      background: #e53935;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="calculator">
+    <div id="display" class="display">0</div>
+    <div class="buttons">
+      <button class="clear">C</button>
+      <button class="delete">DEL</button>
+      <button class="operator">%</button>
+      <button class="operator">/</button>
+
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="operator">*</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="operator">-</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="operator">+</button>
+
+      <button>0</button>
+      <button>.</button>
+      <button class="equal">=</button>
+    </div>
+  </div>
+  <script>
+    // Display aurr buttons ko bulwalia
+    const dispaly = document.getElementById("display");
+    const buttons = document.querySelectorAll("button");
+
+    // Initially user input ko empty rakha
+    let current_input = "";
+
+    // Ab hum log buttons pe kaam kar rahay hain
+    // For each laga diya takay har button ko access karsakoon
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const value = btn.textContent;
+
+        if (btn.classList.contains("clear")) {
+          current_input = "";
+          dispaly.textContent = "Tum ne sab remove kardiya!"; // Display '0' instead of 'Empty' on clear
+        } else if (btn.classList.contains("delete")) {
+          current_input = current_input.slice(0, -1);
+          dispaly.textContent = current_input || "Bhai sab delete kardiya tum ne wapis!";
+        } else if (btn.classList.contains("equal")) {
+          try {
+            // Use eval() to evaluate the mathematical expression
+            // This is a quick fix but be aware of security risks in real-world applications
+            current_input = eval(current_input);
+            dispaly.textContent = current_input;
+          } catch (error) {
+            dispaly.textContent = "Error"; // Display "Error" on invalid input
+            current_input = "";
+          }
+        } else {
+          // Check if the first character is an operator and handle it
+          // This prevents an error if the user starts with an operator
+          if (current_input === "" && (value === "+" || value === "-" || value === "*" || value === "/")) {
+            current_input = dispaly.textContent + value;
+            dispaly.textContent = current_input;
+          } else {
+            current_input += value;
+            dispaly.textContent = current_input;
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
