@@ -1,3 +1,5 @@
 // Server: Whats a server?
-// CURD -> Creat | Update | Replace | Delete 
+// CURD -> Creat | Update | Read | Delete 
+
+
 
