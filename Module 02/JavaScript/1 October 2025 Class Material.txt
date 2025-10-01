@@ -1,0 +1,42 @@
+1. Project folder structure
+2. Files code
+3. copy paste - your changes accordingly
+
+----
+LLMS:
+1.  Qwen AI, GPT, Google Gemini, DeepSeek, Claude, Ms Copilot, Blackbox, DeepSearch, DeepSite
+
+AI Powered Code Editors
+1. Windsurf, Lovable, Cursor, Bolt, VS Code
+ 
+---
+Making Site Live (Free)
+1. Netlify, Github Pages, vercel
+
+(Paid)
+Hostinger
+
+---
+Frontend: 
+Aceternity UI, UI Verse, veo3, chakra, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

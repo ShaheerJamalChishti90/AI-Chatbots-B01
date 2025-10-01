@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.8rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chatbot-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #4e54c8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            background: #3a3fb8;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(78, 84, 200, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(78, 84, 200, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(78, 84, 200, 0); }
+        }
+        
+        .chat-window {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            width: 380px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 100;
+        }
+        
+        .chat-window.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .chat-header {
+            background: #4e54c8;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h2 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.4;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+            background: #f0f2f5;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background: #4e54c8;
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .suggested-questions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+        }
+        
+        .question-btn {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .question-btn:hover {
+            background: #f0f2f5;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            background: #f0f2f5;
+            padding: 12px 16px;
+            border-radius: 18px;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            float: left;
+            margin: 0 2px;
+            background-color: #9E9EA1;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+        
+        .typing-indicator span:nth-of-type(1) {
+            animation: typing 1s infinite;
+        }
+        
+        .typing-indicator span:nth-of-type(2) {
+            animation: typing 1s infinite 0.2s;
+        }
+        
+        .typing-indicator span:nth-of-type(3) {
+            animation: typing 1s infinite 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        /* Clone styling */
+        .chat-window.clone {
+            bottom: 180px;
+            right: 30px;
+            z-index: 99;
+            transform: scale(0.95);
+            opacity: 0.95;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: white;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .instructions ul {
+            text-align: left;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .instructions li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .chat-window {
+                width: 320px;
+                height: 450px;
+            }
+            
+            .suggested-questions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Chatbot</h1>
+        <p class="description">Click the chat icon in the bottom right corner to start. Click again to create a clone!</p>
+        
+        <div class="instructions">
+            <h3>How It Works:</h3>
+            <ul>
+                <li>Click the chat icon to open the chat window</li>
+                <li>Click the chat icon again to create a clone of the chat window</li>
+                <li>Select any question to see the answer</li>
+                <li>Each chat window works independently</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+
+    <script>
+        // Predefined Q&A data
+        const chatData = [
+            {
+                question: "How do I get started?",
+                answer: "Welcome! To get started, simply click on any of the suggested questions below. I'm here to help you with information about our services, features, and support options."
+            },
+            {
+                question: "What are your business hours?",
+                answer: "We're available Monday to Friday from 9 AM to 6 PM EST. Our support team responds to inquiries within 24 hours during business days."
+            },
+            {
+                question: "How can I contact support?",
+                answer: "You can reach our support team through this chat, by emailing support@example.com, or by calling +1 (800) 123-4567. We're here to help!"
+            },
+            {
+                question: "Do you offer refunds?",
+                answer: "Yes, we offer a 30-day money-back guarantee on all our plans. If you're not satisfied with our service, contact us within 30 days for a full refund."
+            },
+            {
+                question: "What payment methods do you accept?",
+                answer: "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for annual plans."
+            },
+            {
+                question: "Is my data secure?",
+                answer: "Absolutely! We use industry-standard encryption (SSL/TLS) to protect your data. All information is stored in secure, GDPR-compliant data centers."
+            },
+            {
+                question: "Can I upgrade my plan later?",
+                answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and you'll only be charged the prorated difference."
+            },
+            {
+                question: "Do you have a mobile app?",
+                answer: "Yes! Our mobile app is available for both iOS and Android. Search for 'ExampleApp' in your device's app store to download it."
+            }
+        ];
+
+        // DOM elements
+        const chatToggle = document.getElementById('chatToggle');
+        let chatWindowCount = 0;
+        let isChatOpen = false;
+
+        // Create a new chat window
+        function createChatWindow() {
+            chatWindowCount++;
+            const chatWindow = document.createElement('div');
+            chatWindow.className = 'chat-window';
+            chatWindow.id = `chatWindow${chatWindowCount}`;
+            
+            // Add clone class if it's not the first window
+            if (chatWindowCount > 1) {
+                chatWindow.classList.add('clone');
+            }
+            
+            chatWindow.innerHTML = `
+                <div class="chat-header">
+                    <h2><i class="fas fa-robot"></i> Support Assistant</h2>
+                    <button class="close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="chat-messages">
+                    <div class="message bot-message">
+                        Hello! I'm your virtual assistant. How can I help you today?
+                    </div>
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="suggested-questions" id="questions${chatWindowCount}">
+                    <!-- Questions will be added here -->
+                </div>
+            `;
+            
+            document.querySelector('.chatbot-container').appendChild(chatWindow);
+            
+            // Add questions to the window
+            const questionsContainer = document.getElementById(`questions${chatWindowCount}`);
+            chatData.forEach(item => {
+                const questionBtn = document.createElement('button');
+                questionBtn.className = 'question-btn';
+                questionBtn.textContent = item.question;
+                questionBtn.onclick = () => handleQuestionClick(item, chatWindowCount);
+                questionsContainer.appendChild(questionBtn);
+            });
+            
+            // Add close functionality
+            chatWindow.querySelector('.close-btn').onclick = () => {
+                chatWindow.remove();
+                if (chatWindowCount === 1) {
+                    isChatOpen = false;
+                }
+            };
+            
+            // Show the chat window with animation
+            setTimeout(() => {
+                chatWindow.classList.add('active');
+            }, 10);
+            
+            return chatWindow;
+        }
+        
+        // Handle question click
+        function handleQuestionClick(item, windowId) {
+            const chatWindow = document.getElementById(`chatWindow${windowId}`);
+            const messagesContainer = chatWindow.querySelector('.chat-messages');
+            
+            // Add user question
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message';
+            userMessage.textContent = item.question;
+            messagesContainer.appendChild(userMessage);
+            
+            // Show typing indicator
+            const typingIndicator = chatWindow.querySelector('.typing-indicator');
+            typingIndicator.style.display = 'block';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Simulate bot thinking time
+            setTimeout(() => {
+                typingIndicator.style.display = 'none';
+                
+                // Add bot response
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot-message';
+                botMessage.textContent = item.answer;
+                messagesContainer.appendChild(botMessage);
+                
+                // Scroll to bottom
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1500);
+        }
+        
+        // Toggle chat functionality
+        chatToggle.addEventListener('click', () => {
+            if (!isChatOpen) {
+                // First click - open chat
+                createChatWindow();
+                isChatOpen = true;
+            } else {
+                // Second click - clone chat
+                createChatWindow();
+            }
+        });
+    </script>
+</body>
+</html>
