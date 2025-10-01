@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Al Quran Academy — Interactive Chat Assistant</title>
+  <meta name="description" content="Al Quran Academy — Learn Quran with our interactive assistant" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Add any web fonts if you like (optional) -->
+</head>
+<body>
+  <!-- =========================
+       SITE WRAPPER
+       ========================= -->
+  <div class="site-wrapper">
+
+    <!-- =========================
+         TOP NAV / HEADER
+         ========================= -->
+    <header class="topbar" role="banner">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <img src="assets/images/logo.png" alt="Al Quran Academy logo" class="brand-logo" />
+          <div class="brand-text">
+            <h1 class="site-title">Al Quran Academy</h1>
+            <p class="site-sub">Tajweed • Hifz • Tafseer</p>
+          </div>
+        </div>
+
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#courses">Courses</a></li>
+            <li><a class="nav-link" href="#admissions">Admissions</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+            <li><button class="btn btn-ghost" id="openChatBtn">Chat with Assistant</button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =========================
+         HERO
+         ========================= -->
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h2 class="hero-title">Learn Quran with clarity & devotion</h2>
+          <p class="hero-lead">
+            Join Al Quran Academy for structured tajweed, memorization (Hifz), and contextual tafseer.
+            Our interactive assistant helps students, parents, and visitors instantly.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#courses" class="btn btn-primary">Explore Courses</a>
+            <a href="#admissions" class="btn btn-outline">Admissions</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="feature-cards">
+            <article class="feature-card">
+              <div class="feature-icon">📘</div>
+              <h3>Structured Curriculum</h3>
+              <p>Age-based syllabus and one-on-one tajweed coaching.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🕋</div>
+              <h3>Qualified Teachers</h3>
+              <p>Experienced scholars & trained tutors for online & offline sessions.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">💬</div>
+              <h3>Chat Assistant</h3>
+              <p>Get instant answers about courses, timing, and registration.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+    <main class="main" id="maincontent">
+
+      <!-- About -->
+      <section id="about" class="section container">
+        <div class="grid grid-2 gap-xl">
+          <div class="card card-soft">
+            <h2>Who we are</h2>
+            <p>
+              Al Quran Academy is dedicated to teaching the Holy Quran with proper recitation and comprehension.
+              We combine traditional pedagogy with modern tools so students of all ages can benefit.
+            </p>
+            <ul class="list-check">
+              <li>Tajweed and Correct Recitation</li>
+              <li>Hifz Programs for All Ages</li>
+              <li>Tafseer Sessions and Arabic Basics</li>
+            </ul>
+          </div>
+
+          <aside class="card card-soft card-side">
+            <h3>Why choose us</h3>
+            <p>We provide a nurturing environment and structured progress tracking.</p>
+            <div class="progress-list">
+              <div class="progress-item"><strong>Tajweed</strong><span class="progress small">95%</span></div>
+              <div class="progress-item"><strong>Hifz</strong><span class="progress small">80%</span></div>
+              <div class="progress-item"><strong>Tafseer</strong><span class="progress small">70%</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Courses -->
+      <section id="courses" class="section container">
+        <h2 class="section-title">Our courses</h2>
+        <div class="grid grid-3 gap-md">
+          <article class="course-card">
+            <div class="course-media">
+              <img src="assets/images/hero.jpg" alt="course image" />
+            </div>
+            <div class="course-body">
+              <h3>Beginner Tajweed</h3>
+              <p>Focused on proper articulation (Makharij) and pronunciation.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-outline" href="#">Learn More</a>
+                <a class="btn btn-sm btn-primary" href="#">Enroll</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-media">
+              <img src="assets/images/hero.jpg" alt="course image" />
+            </div>
+            <div class="course-body">
+              <h3>Hifz Program</h3>
+              <p>Memorization with revision schedules and mentor support.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-outline" href="#">Learn More</a>
+                <a class="btn btn-sm btn-primary" href="#">Enroll</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-media">
+              <img src="assets/images/hero.jpg" alt="course image" />
+            </div>
+            <div class="course-body">
+              <h3>Tafseer & Understanding</h3>
+              <p>Contextual study of Surahs and thematic lessons.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-outline" href="#">Learn More</a>
+                <a class="btn btn-sm btn-primary" href="#">Enroll</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="section container card glass">
+        <h2 class="section-title">Student Stories</h2>
+        <div class="grid grid-3 gap-md">
+          <blockquote class="testimonial">
+            <p>"My child's recitation improved dramatically — excellent teachers!"</p>
+            <cite>— Ayesha</cite>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p>"The Hifz program is structured and encouraging. The assistant is very helpful."</p>
+            <cite>— Bilal</cite>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p>"Great balance of tradition and technology. Highly recommended."</p>
+            <cite>— Fatima</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- FAQ Panel (pre-built questions user can click) -->
+      <section id="faq" class="section container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item card-soft">
+            <h4>How do I register?</h4>
+            <p>Click the admissions button or ask our chatbot to guide you through registration.</p>
+          </div>
+          <div class="faq-item card-soft">
+            <h4>What are the class timings?</h4>
+            <p>We offer flexible morning and evening batches — ask the assistant for current schedules.</p>
+          </div>
+          <div class="faq-item card-soft">
+            <h4>Do you offer online classes?</h4>
+            <p>Yes — online and in-person options available.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section container">
+        <div class="grid grid-2 gap-lg">
+          <div class="card card-soft">
+            <h2>Contact us</h2>
+            <p>Reach out for admissions, schedules, or to request a trial class.</p>
+            <address class="contact-info">
+              <div><strong>Phone:</strong> +92 300 0000000</div>
+              <div><strong>Email:</strong> info@alquranacademy.example</div>
+              <div><strong>Address:</strong> Federal B Area, Karachi</div>
+            </address>
+          </div>
+
+          <form class="card card-soft contact-form" id="contactForm" action="#" method="post" aria-label="Contact form">
+            <h3>Send a message</h3>
+            <label class="input-group">
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your full name" required>
+            </label>
+            <label class="input-group">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label class="input-group">
+              <span>Message</span>
+              <textarea name="message" rows="4" placeholder="Write your message..." required></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send</button>
+              <button class="btn btn-outline" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <p>© <span id="year"></span> Al Quran Academy</p>
+          <p class="muted">Designed with care for students and families.</p>
+        </div>
+
+        <div class="footer-right">
+          <ul class="social-list">
+            <li><a href="#" aria-label="facebook">Facebook</a></li>
+            <li><a href="#" aria-label="instagram">Instagram</a></li>
+            <li><a href="#" aria-label="youtube">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================
+         CHATBOT MARKUP (PLUG & PLAY)
+         ========================= -->
+    <div class="chatbot-wrapper" aria-hidden="true" id="chatbotWrapper">
+      <button class="chatbot-fab" id="chatToggle" aria-label="Open chat">
+        <span class="fab-emoji">💬</span>
+      </button>
+
+      <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Al Quran Assistant">
+        <header class="chat-header">
+          <div class="chat-title">
+            <img src="assets/images/logo.png" alt="" class="chat-avatar" />
+            <div>
+              <strong>Al Quran Assistant</strong>
+              <small class="muted">Ask about courses, timings, registration...</small>
+            </div>
+          </div>
+          <div class="chat-controls">
+            <button class="icon-btn" id="minimizeChat" title="Minimize">_</button>
+            <button class="icon-btn" id="closeChat" title="Close">✕</button>
+          </div>
+        </header>
+
+        <div class="chat-body" id="chatBody" aria-live="polite">
+          <!-- Example preloaded messages to show style -->
+          <div class="msg-row left">
+            <div class="msg msg-received">
+              <div class="meta">Assistant • <span class="time">09:00</span></div>
+              <div class="bubble">
+                <p>Welcome! I can help you with courses, schedules, and registration. Try clicking a suggestion below or type your question.</p>
+                <ul class="quick-actions">
+                  <li class="quick-action">What courses do you offer?</li>
+                  <li class="quick-action">How to register?</li>
+                  <li class="quick-action">Class timings</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="chat-footer">
+          <div class="chat-input-wrap">
+            <input id="chatInput" type="text" placeholder="Type your question or select a suggestion..." aria-label="Chat input">
+            <button id="sendBtn" class="btn btn-ghost">Send</button>
+          </div>
+          <div class="chat-hint muted">
+            Tip: Use quick suggestions or type freely. Answers come from the website data.
+          </div>
+        </footer>
+      </div> <!-- /chat-panel -->
+    </div> <!-- /chatbot-wrapper -->
+
+  </div><!-- /.site-wrapper -->
+
+  <!-- Minimal JS to show date and hook placeholders (you will add full chatbot logic in js/chatbot.js)
+  <script>
+    // Show current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Minimal chat panel behavior (open/close) — replace with your full chatbot code
+    (function () {
+      const wrapper = document.getElementById('chatbotWrapper');
+      const chatPanel = document.getElementById('chatPanel');
+      const chatToggle = document.getElementById('chatToggle');
+      const openChatBtn = document.getElementById('openChatBtn');
+      const closeChat = document.getElementById('closeChat');
+      const minimizeChat = document.getElementById('minimizeChat');
+
+      function openPanel() {
+        wrapper.setAttribute('aria-hidden', 'false');
+        chatPanel.classList.add('open');
+        chatPanel.focus();
+      }
+      function closePanel() {
+        wrapper.setAttribute('aria-hidden', 'true');
+        chatPanel.classList.remove('open');
+      }
+      chatToggle.addEventListener('click', openPanel);
+      openChatBtn && openChatBtn.addEventListener('click', openPanel);
+      closeChat.addEventListener('click', closePanel);
+      minimizeChat.addEventListener('click', () => {
+        chatPanel.classList.toggle('minimized');
+      });
+    })();
+
+  </script> -->
+  <script src="/public/data/data.js "></script>
+  <script src="/public/js/chatbot.js "></script> 
+</body>
+</html>
